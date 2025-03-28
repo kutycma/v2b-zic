@@ -12,7 +12,7 @@
 
 按以下步骤进行面板文件迁移：
 
-    git remote set-url origin https://github.com/wyx2685/v2board  
+    git remote set-url origin https://github.com/kutycma/v2b-zic  
     git checkout master  
     ./update.sh  
 
@@ -34,7 +34,7 @@
 - Laravel
 
 ## Demo
-[Demo](https://demo.v2board.com)
+[Demo V2board Gốc](https://demo.v2board.com)
 
 ## Document
 [Click](https://v2board.com)
@@ -44,6 +44,7 @@ Thanks to the open source project license provided by [Jetbrains](https://www.je
 
 ## Community
 🔔Telegram Group: [@unofficialV2board](https://t.me/unofficialV2board)  
+🔔Telegram Group ZicMod: [@unofficialV2board](https://t.me/v2boardzic) 
 
 ## How to Feedback
 Follow the template in the issue to submit your question correctly, and we will have someone follow up with you.
