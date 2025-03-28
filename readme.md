@@ -44,7 +44,7 @@ Thanks to the open source project license provided by [Jetbrains](https://www.je
 
 ## Community
 🔔Telegram Group: [@unofficialV2board](https://t.me/unofficialV2board)  
-🔔Telegram Group ZicMod: [@unofficialV2board](https://t.me/v2boardzic) 
+🔔Telegram Group ZicMod: [@v2boardzic](https://t.me/v2boardzic) 
 
 ## How to Feedback
 Follow the template in the issue to submit your question correctly, and we will have someone follow up with you.
