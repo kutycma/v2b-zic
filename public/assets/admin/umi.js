@@ -74198,7 +74198,7 @@
                         value: e
                     }, e)
                 }
-                )))), Object.keys(i || {}).map(e=>{
+                )))), Object.keys(i).map(e=>{
                     return d.a.createElement("div", {
                         className: "form-group"
                     }, d.a.createElement("label", {
@@ -101449,7 +101449,7 @@
                         case 8:
                             if (a = e.sent,
                             s = {},
-                            -1 === (a.headers.get("content-type") || "").indexOf("application/json")) {
+                            "application/json" !== a.headers.get("content-type")) {
                                 e.next = 16;
                                 break
                             }
