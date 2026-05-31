@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class OrderService
 {
     CONST STR_TO_TIME = [
+        'day_price' => 0.033,
         'month_price' => 1,
         'quarter_price' => 3,
         'half_year_price' => 6,
