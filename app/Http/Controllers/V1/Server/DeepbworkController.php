@@ -29,7 +29,9 @@ class DeepbworkController extends Controller
             abort(500, 'token is error');
         }
     }
-
+    public function online(Request $request)
+    {     
+    }
     // 后端获取用户
     public function user(Request $request)
     {
