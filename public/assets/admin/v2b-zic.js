@@ -29,11 +29,18 @@
   }
 
   function translatePage() {
+    if (!document.body) return;
     translateNode(document.body);
   }
 
   function loadDictionary() {
-    fetch(DICT_URL)
+    if (window.zhViDictionary && typeof window.zhViDictionary === 'object') {
+      translatePage();
+      return;
+    }
+    if (!window.DICT_URL) return;
+
+    fetch(window.DICT_URL)
       .then(res => res.json())
       .then(dict => {
         window.zhViDictionary = dict;

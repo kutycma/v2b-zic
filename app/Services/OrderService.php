@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class OrderService
 {
     CONST STR_TO_TIME = [
+        // 'day_price' => 0.033,
         'month_price' => 1,
         'quarter_price' => 3,
         'half_year_price' => 6,
@@ -274,8 +275,13 @@ class OrderService
     {
         $order = $this->order;
         DB::beginTransaction();
-        $order->status = 2;
-        if (!$order->save()) {
+        $affected = Order::where('id', $order->id)
+            ->where('status', 0)
+            ->update([
+                'status' => 2
+            ]);
+
+        if ($affected !== 1) {
             DB::rollBack();
             return false;
         }
