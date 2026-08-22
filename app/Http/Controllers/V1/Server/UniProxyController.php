@@ -130,15 +130,32 @@ class UniProxyController extends Controller
         if (empty($data)) {
             $data = $_POST;
         }
+        if (empty($data)) {
+            return response([
+                'data' => true
+            ]);
+        }
         if (!is_array($data)) {
             return response([
                 'error' => 'Invalid online data format'
             ], 400);
         }
         $updateAt = time();
-        $cacheKeys = array_map(function ($uid) {
-            return 'ALIVE_IP_USER_' . $uid;
-        }, array_keys($data));
+
+        $cacheKeys = [];
+        $keyMap = [];
+        foreach ($data as $uid => $_) {
+            if (!is_numeric($uid)) continue;
+            $key = 'ALIVE_IP_USER_' . $uid;
+            $cacheKeys[] = $key;
+            $keyMap[$uid] = $key;
+        }
+
+        if (empty($cacheKeys)) {
+            return response([
+                'data' => true
+            ]);
+        }
 
         $cachedData = !empty($cacheKeys) ? Cache::many($cacheKeys) : [];
         if (!is_array($cachedData)) $cachedData = [];
@@ -148,7 +165,7 @@ class UniProxyController extends Controller
             if (!is_numeric($uid) || !is_array($ips)) {
                 continue; // 跳过无效数据
             }
-            $key = 'ALIVE_IP_USER_' . $uid;
+            $key = $keyMap[$uid];
             $ips_array = $cachedData[$key] ?? [];
 
             // 更新节点数据
