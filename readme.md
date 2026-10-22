@@ -37,7 +37,6 @@
 [Demo_admin](https://v2bdemo.v-50.me/admindashboard)
 邮箱和密码可随意输入
 
-
 ## Document
 [Click](https://v2board.com)
 
@@ -56,4 +55,3 @@ Donate Zic: STK: 19031062106666 - Techcombank
 
 ## How to Feedback
 Follow the template in the issue to submit your question correctly, and we will have someone follow up with you.
-
